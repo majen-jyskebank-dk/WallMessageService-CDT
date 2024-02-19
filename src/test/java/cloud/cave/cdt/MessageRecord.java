@@ -57,7 +57,7 @@ public class MessageRecord {
     public void setCreatorTimeStampISO8601(String creatorTimeStampISO8601) {
         this.creatorTimeStampISO8601 = creatorTimeStampISO8601;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }

@@ -95,6 +95,20 @@ public class CDTWallMessageService {
     }
 
     @Test
+    public void mustReturn400WhenFetchingAndBadPositionSupplied() {
+        // Given the message service is online and available
+
+        // When calling the service with a bad position
+        final HttpResponse<JsonNode> reply = Unirest
+                .get(serverRootUrl + PATH + "bad,id?startIndex=0&pageSize=8")
+                .accept("application/json")
+                .asJson();
+
+        // Then the service must return status code 400
+        assertThat("Must return status code 400", reply.getStatus(), is(400));
+    }
+
+    @Test
     public void mustReturn201OnCreateMessage() {
         // Given the message service is online and available
         // And there are no messages on a wall at position (0,0,0)
@@ -204,7 +218,36 @@ public class CDTWallMessageService {
     }
 
     @Test
-    public void mustReturn400WhenBadMessageIdSupplied() {
+    public void mustReturn400WhenCreatingAndBadPositionSupplied() {
+        // Given the message service is online and available
+
+        // When calling the service with a bad position
+        final HttpResponse<JsonNode> reply = Unirest
+                .post(serverRootUrl + PATH + "bad,id")
+                .body(new MessageRecord("Message 1", "andersId", "Anders"))
+                .contentType("application/json")
+                .asJson();
+
+        // Then the service must return status code 400
+        assertThat("Must return status code 400", reply.getStatus(), is(400));
+    }
+
+    @Test
+    public void mustReturn400WhenUpdatingAndBadPositionSupplied() {
+        // Given the message service is online and available
+
+        // When calling the service with a bad position
+        final HttpResponse<JsonNode> reply = Unirest
+                .get(serverRootUrl + PATH + "bad,id?startIndex=0&pageSize=8")
+                .accept("application/json")
+                .asJson();
+
+        // Then the service must return status code 400
+        assertThat("Must return status code 400", reply.getStatus(), is(400));
+    }
+
+    @Test
+    public void mustReturn400WhenUpdatingAndBadMessageIdSupplied() {
         // Given the message service is online and available
         // And there is a message on a wall at position (0,0,0)
         final MessageRecord newMessageRecord = new MessageRecord("Message 1", "andersId", "Anders");
