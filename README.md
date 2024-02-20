@@ -17,9 +17,18 @@ The project is built using Gradle and JUnit 5.
 ### Prerequisites
 To run the tests, you need to have Java 17 installed on your machine.
 
+### The first run
+Please note that the first run might take a while to complete. If you do not already have the image of our 
+message-service on your system, it will be downloaded. This might take a while.
+
+It is recommended that you pull our image from Harbor before running the test using the following command:
+```shell
+docker pull hub.baerbak.com/juliett/message-service:latest
+```
+
 ### Running the tests
 To run the tests, simply run the following command in the terminal:
-```
+```shell
 ./gradlew test
 ```
 
