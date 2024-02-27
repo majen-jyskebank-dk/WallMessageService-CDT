@@ -1,5 +1,7 @@
 # Wall Message Service CDT
-This project contains the CDT for group Julietts Wall Message Service.
+This project contains the CDT for group Julietts Wall Message Service. It is designed to only use code available in the
+Skycave project, and as such, it should be possible to simply copy it over into the Skycave project. Note that you
+might have to update some imports.
 
 ## Overview
 The project contains two Java classes: MessageRecord and CDTWallMessageService.
@@ -23,7 +25,7 @@ message-service on your system, it will be downloaded. This might take a while.
 
 It is recommended that you pull our image from Harbor before running the test using the following command:
 ```shell
-docker pull hub.baerbak.com/juliett/message-service:latest
+docker pull hub.baerbak.com/juliett-public/message-service:latest
 ```
 
 ### Running the tests

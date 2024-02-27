@@ -31,7 +31,7 @@ public class CDTWallMessageService {
 
     @Container
     public GenericContainer messageService =
-            new GenericContainer(DockerImageName.parse("hub.baerbak.com/juliett/message-service:latest"))
+            new GenericContainer(DockerImageName.parse("hub.baerbak.com/juliett-public/message-service:latest"))
                     .withExposedPorts(SERVER_PORT)
                     .withEnv("ENVIRONMENT","fake");
     private String serverRootUrl;
