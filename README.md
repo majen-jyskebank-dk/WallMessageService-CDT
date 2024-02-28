@@ -29,7 +29,7 @@ docker pull hub.baerbak.com/juliett-public/message-service:latest
 ```
 
 ### Running the tests
-To run the tests, simply run the following command in the terminal:
+To run the tests, simply run the following command in the terminal from the root of the project:
 ```shell
 ./gradlew test
 ```
